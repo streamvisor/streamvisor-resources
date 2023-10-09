@@ -22,7 +22,7 @@ services:
   streamvisor:
     image: ghcr.io/streamvisor/streamvisor:1.0.0
     ports:
-      - "9527:9527"
+      - "8888:8888"
       - "7750:7750"
     volumes:
       - "./data/streamvisor/data/:/streamvisor/data"

@@ -18,6 +18,7 @@ services:
       retries: 10
     environment:
       - 'PULSAR_PREFIX_advertisedAddress=pulsar'
+      - 'PULSAR_PREFIX_advertisedListeners=external:pulsar://127.0.0.1:6650'
 
   streamvisor:
     image: ghcr.io/streamvisor/streamvisor:1.0.0

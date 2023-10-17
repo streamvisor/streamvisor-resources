@@ -1,18 +1,17 @@
 version: '0.1'
 services:
-
   pulsar:
     image: apachepulsar/pulsar:3.0.0
     command: sh -c "bin/apply-config-from-env.py conf/standalone.conf && bin/pulsar standalone"
     hostname: pulsar
     ports:
-      - "8080:8080"
-      - "6650:6650"
+      - '8080:8080'
+      - '6650:6650'
     restart: unless-stopped
     volumes:
-      - "./data/pulsar/data/:/pulsar/data"
+      - './data/pulsar/data/:/pulsar/data'
     healthcheck:
-      test: [ "CMD", "bin/pulsar-admin", "brokers", "healthcheck" ]
+      test: ['CMD', 'bin/pulsar-admin', 'brokers', 'healthcheck']
       interval: 5s
       timeout: 10s
       retries: 10
@@ -23,10 +22,10 @@ services:
   streamvisor:
     image: ghcr.io/streamvisor/streamvisor:1.0.0
     ports:
-      - "8888:8888"
-      - "7750:7750"
+      - '8888:8888'
+      - '7750:7750'
     volumes:
-      - "./data/streamvisor/data/:/streamvisor/data"
+      - './data/streamvisor/data/:/streamvisor/data'
     depends_on:
       pulsar:
         condition: service_healthy

@@ -32,10 +32,9 @@ services:
     links:
       - pulsar
     environment:
-      - 'STREAMVISOR_BOOTSTRAPENV_ENABLE=true'
-      - 'STREAMVISOR_BOOTSTRAPENV_NAME=standalone'
-      - 'STREAMVISOR_BOOTSTRAPENV_SERVICEURL=http://pulsar:8080'
-      - 'STREAMVISOR_BOOTSTRAPENV_BROKERURL=pulsar://pulsar:6650'
+      - 'STREAMVISOR_ENVIRONMENTS_0_NAME=standalone'
+      - 'STREAMVISOR_ENVIRONMENTS_0_SERVICEURL=http://pulsar:8080'
+      - 'STREAMVISOR_ENVIRONMENTS_0_BROKERURL=pulsar://pulsar:6650'
 
   data-faker:
     image: ghcr.io/streamvisor/data-faker:1.1.3

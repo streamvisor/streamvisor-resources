@@ -18,6 +18,7 @@ services:
     environment:
       - 'PULSAR_PREFIX_advertisedAddress=pulsar'
       - 'PULSAR_PREFIX_advertisedListeners=internal:pulsar://pulsar:6650,external:pulsar://127.0.0.1:6650'
+      - 'PULSAR_STANDALONE_USE_ZOOKEEPER=1'
 
   streamvisor:
     image: ghcr.io/streamvisor/streamvisor:2.0.0

@@ -37,7 +37,7 @@ services:
       - 'STREAMVISOR_ENVIRONMENTS_0_BROKERURL=pulsar://pulsar:6650'
 
   data-faker:
-    image: ghcr.io/streamvisor/data-faker:1.2.1
+    image: ghcr.io/streamvisor/data-faker:1.2.3
     profiles:
       - demo
     depends_on:

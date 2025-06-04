@@ -26,6 +26,7 @@ services:
       - '7750:7750'
     volumes:
       - './data/streamvisor/data/:/streamvisor/data'
+      - './license.lic:/streamvisor/license/license.lic'
     depends_on:
       pulsar:
         condition: service_healthy
@@ -35,6 +36,8 @@ services:
       - 'STREAMVISOR_ENVIRONMENTS_0_NAME=standalone'
       - 'STREAMVISOR_ENVIRONMENTS_0_SERVICEURL=http://pulsar:8080'
       - 'STREAMVISOR_ENVIRONMENTS_0_BROKERURL=pulsar://pulsar:6650'
+      - 'STREAMVISOR_LICENSE_FILEPATH=/streamvisor/license/license.lic'
+      - 'STREAMVISOR_RBAC_ENABLE=true'
 
   data-faker:
     image: ghcr.io/streamvisor/data-faker:1.2.4
